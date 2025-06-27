@@ -17,21 +17,21 @@ const myProfile = {
 const myProjects =[
   {
     title: "Diabetes Prediction ",
-    description: "Membuat prediksi kemungkinan seseorang terkena diabetes dengan data riwayat kesehatan.",
+    description: "Making predictions about a person's likelihood of developing diabetes using health history data.",
     link: "https://github.com/primeell/ML-predictions/blob/main/Diabetes%20Prediction%20ML.ipynb",
-    tags: ["Machine Learning", "Python", "Klasifikasi"],
+    tags: ["Machine Learning", "Python", "Classification"],
   },
   {
     title: "Public sentimen analysis",
-    description: "Melakukan analisis sentimen pada data Twitter untuk memahami opini publik terhadap suatu topik menggunakan teknik NLP.",
+    description: "Performing sentiment analysis from X to understand public opinion on a topic using NLP techniques.",
     link: "https://github.com/primeell/Sentimen-analysis",
-    tags: ["NLP", "Python", "Analisis Data"],
+    tags: ["NLP", "Python", "Data analysis"],
   },
   {
     title: "Past BTC price predictions",
-    description: "Membuat prediksi harga bitcoin dengan menggunakan pendekatan pola masa lalu.",
+    description: "Making bitcoin price predictions using past pattern approaches.",
     link: "https://github.com/primeell/ML-predictions/tree/main",
-    tags: ["Visualisasi Data", "Business Intelligence"],
+    tags: ["Data visualization", "Business Intelligence"],
   },
 ];
 ---
@@ -93,24 +93,7 @@ const myProjects =[
       100% { opacity: 0; transform: scale(0.5); } 
     }
 
-    /* Rocket styling */
-    .rocket {
-      position: fixed;
-      bottom: -100px; /* Start off-screen */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px; /* Adjust size as needed */
-      height: auto;
-      z-index: 10;
-      animation: launch 10s linear infinite; /* Rocket launch animation */
-    }
-
-    @keyframes launch {
-      0% { bottom: -100px; opacity: 0; } 
-      10% { bottom: 0px; opacity: 1; } 
-      90% { bottom: calc(100% - 100px); opacity: 1; } /* Adjust based on rocket height */
-      100% { bottom: 100%; opacity: 0; } 
-    }
+    
   </style>
 
   <style>
@@ -217,7 +200,6 @@ const myProjects =[
   </script>
 
   <div class="stars"></div>
-  <img src="/rocket.png" alt="Rocket" class="rocket">
 
   <script>
     // Generate stars dynamically
