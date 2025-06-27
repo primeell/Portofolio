@@ -1,0 +1,57 @@
+---
+// Komponen ini sekarang menerima prop baru: cvButtonText
+const { name, bio, photo, cvLink, cvButtonText } = Astro.props;
+---
+<section class="profile-header">
+  <img src={photo} alt={`Foto profil ${name}`} class="profile-image"/>
+  <div class="profile-info">
+    <h1 class="profile-name">{name}</h1>
+    <p class="profile-bio">{bio}</p>
+    {/* PERUBAHAN: Menggunakan prop untuk teks tombol */}
+    <a href={cvLink} target="_blank" rel="noopener noreferrer" class="button">{cvButtonText}</a>
+  </div>
+</section>
+
+<style>
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #8ab4f8;
+    box-shadow: 0 0 8px rgba(138, 180, 248, 0.7);
+    flex-shrink: 0;
+  }
+  .profile-name {
+    font-size: 1.8rem;
+    margin: 0 0 0.25rem 0;
+    color: #d9e3fa;
+  }
+  .profile-bio {
+    font-size: 0.9rem;
+    color: #a7c9ff;
+    margin: 0 0 0.75rem 0;
+    max-width: 400px;
+    font-weight: 600; 
+  }
+  .button {
+    background-color: #8ab4f8;
+    color: #1e3a8a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+  }
+  .button:hover {
+    background-color: #bdd7f6;
+  }
+</style>
