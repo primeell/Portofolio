@@ -22,11 +22,12 @@ const { name, bio, photo, cvLink, cvButtonText } = Astro.props;
     text-align: left;
   }
   .profile-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid #8ab4f8;
     box-shadow: 0 0 8px rgba(138, 180, 248, 0.7);
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     flex-shrink: 0;
   }
   .profile-name {
