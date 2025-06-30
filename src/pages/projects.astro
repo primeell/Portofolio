@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Projects from '../components/Projects.astro';
+
+// Data proyek yang sebelumnya ada di index.astro
+const myProjects =[
+  {
+    title: "Diabetes Prediction ",
+    description: "Making predictions about a person's likelihood of developing diabetes using health history data.",
+    link: "https://github.com/primeell/ML-predictions/blob/main/Diabetes%20Prediction%20ML.ipynb",
+    tags: ["Machine Learning", "Python", "Classification"],
+  },
+  {
+    title: "Public sentimen analysis",
+    description: "Performing sentiment analysis from X to understand public opinion on a topic using NLP techniques.",
+    link: "https://github.com/primeell/Sentimen-analysis",
+    tags: ["NLP", "Python", "Data analysis"],
+  },
+  {
+    title: "Past BTC price predictions",
+    description: "Making bitcoin price predictions using past pattern approaches.",
+    link: "https://github.com/primeell/ML-predictions/tree/main",
+    tags: ["Data visualization", "Business Intelligence"],
+  },
+];
+---
+
+<Layout title="My Projects">
+  <main>
+    <Projects projects={myProjects} />
+  </main>
+</Layout>

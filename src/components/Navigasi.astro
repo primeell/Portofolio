@@ -1,0 +1,52 @@
+---
+// Tidak ada props yang dibutuhkan lagi
+---
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/cv">Curriculum Vitae</a>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="/certificates">Certificates</a>
+      <a href="/achievements">Achievements</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .nav-brand a:hover {
+    color: var(--primary-color);
+  }
+  .nav-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+</style>

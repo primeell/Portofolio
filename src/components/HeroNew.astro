@@ -1,0 +1,133 @@
+---
+const {
+  greeting = "Hello, I am",
+  name = "Gibran El Fahmi",
+  titles = ["Data Analyst", "Machine Learning"],
+  about = "A detail-oriented Computer Engineering undergraduate specializing in Data Science and Machine Learning. I have a strong passion for transforming complex datasets into actionable insights and building intelligent systems that drive business value. My approach combines rigorous analytical thinking with a creative drive to find solutions, and this portfolio showcases my dedication to applying these skills to solve real-world problems.",
+  photo = "/Foto hima gw.JPG"
+} = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="hero-text-container">
+    <p class="greeting">{greeting}</p>
+    <h1 class="name">{name}</h1>
+    <div class="title-pills">
+      {titles.map(title => <span class="pill">{title}</span>)}
+    </div>
+    <div class="about-me">
+      <p>{about}</p>
+    </div>
+  </div>
+  <div class="hero-image-container">
+    <img src={photo} alt="Gibran El Fahmi" class="hero-image"/>
+    <div class="image-shadow"></div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 4rem;
+  }
+
+  .hero-text-container {
+    flex-basis: 60%;
+  }
+
+  .greeting {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .title-pills {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .pill {
+    background-color: #272E3C; /* Darker pill background */
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .about-me p {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem; /* Memberi ruang untuk tombol */
+  }
+
+  .lets-talk-button {
+    background-color: #FFD700; /* Kuning */
+    color: #111827; /* Warna teks gelap agar kontras */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .lets-talk-button:hover {
+    background-color: #FFC400; /* Sedikit lebih gelap saat hover */
+  }
+
+  .hero-image-container {
+    flex-basis: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+  }
+
+  .image-shadow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+    opacity: 0.3;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column-reverse; /* Image on top on mobile */
+      text-align: center;
+    }
+    .title-pills {
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+const skills = [
+  { name: "Python", logo: "/logos/python.png" },
+  { name: "SQL", logo: "/logos/sql.png" },
+  { name: "Pandas", logo: "/logos/pandas.png" },
+  { name: "NumPy", logo: "/logos/numpy.png" },
+];
+---
+
+<section class="skills-section">
+  <h2>My Skills</h2>
+  <div class="skills-grid">
+    {skills.map(skill => (
+      <div class="skill-item">
+        <img src={skill.logo} alt={skill.name} class="skill-logo"/>
+        <p>{skill.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .skills-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #1F2937; /* Darker background for skill item */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .skill-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .skill-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .skill-item p {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+</style>
