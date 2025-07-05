@@ -1,5 +1,5 @@
 ---
-// Tidak ada props yang dibutuhkan lagi
+const { currentPath } = Astro.props;
 ---
 
 <nav class="navbar">
@@ -8,11 +8,11 @@
       <a href="/cv">Curriculum Vitae</a>
     </div>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/certificates">Certificates</a>
-      <a href="/achievements">Achievements</a>
-      <a href="/blog">Blog</a>
+      <a href="/" class:list={{ active: currentPath === '/' }}>Home</a>
+      <a href="/projects" class:list={{ active: currentPath === '/projects' }}>Projects</a>
+      <a href="/certificates" class:list={{ active: currentPath === '/certificates' }}>Certificates</a>
+      <a href="/achievements" class:list={{ active: currentPath === '/achievements' }}>Achievements</a>
+      <a href="/blog" class:list={{ active: currentPath === '/blog' }}>Blog</a>
     </div>
   </div>
 </nav>
@@ -44,9 +44,13 @@
     margin-left: 2.5rem;
     font-size: 1rem;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, font-weight 0.3s ease;
   }
   .nav-links a:hover {
     color: var(--primary-color);
+  }
+  .nav-links a.active {
+    font-weight: bold;
+    color: var(--text-color);
   }
 </style>

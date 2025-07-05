@@ -3,7 +3,7 @@ const {
   greeting = "Hello, I am",
   name = "Gibran El Fahmi",
   titles = ["Data Analyst", "Machine Learning"],
-  about = "A detail-oriented Computer Engineering undergraduate specializing in Data Science and Machine Learning. I have a strong passion for transforming complex datasets into actionable insights and building intelligent systems that drive business value. My approach combines rigorous analytical thinking with a creative drive to find solutions, and this portfolio showcases my dedication to applying these skills to solve real-world problems.",
+  about = "A Computer Engineering undergraduate specializing in Data Science and Machine Learning. I have a strong passion for transforming complex datasets into actionable insights and building intelligent systems that drive business value. My approach combines rigorous analytical thinking with a creative drive to find solutions, and this portfolio showcases my dedication to applying these skills to solve real-world problems.",
   photo = "/Foto hima gw.JPG"
 } = Astro.props;
 ---
@@ -24,10 +24,12 @@ const {
     <img src={photo} alt="Gibran El Fahmi" class="hero-image"/>
     <div class="image-shadow"></div>
   </div>
+  
 </section>
 
 <style>
   .hero-section {
+    position: relative; /* Needed for the scroll-down button */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -131,4 +133,6 @@ const {
       justify-content: center;
     }
   }
+
+  
 </style>
