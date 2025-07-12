@@ -1,10 +1,82 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const achievements = [
+  {
+    title: "3rd Place in INSITEF",
+    description: "Achieved 3rd place in the International Science, Technology, and Engineering Fair (INSITEF), a green energy research competition held by Pertamina University.",
+    imgSrc: "/3rdplaceinsitef.jpg" 
+  }
+];
 ---
 
 <Layout title="Achievements">
   <main>
-    <h1>Achievements Page</h1>
-    <p>A list of achievements will be displayed here.</p>
+    <div class="widget-container">
+      <h2 class="widget-title">Achievements</h2>
+      <div class="grid">
+        {achievements.map((ach) => (
+          <a href={ach.imgSrc} class="card" data-img-src={ach.imgSrc}>
+            <h3>{ach.title}</h3>
+            <p>{ach.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  main {
+    padding: 2rem;
+  }
+  .widget-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .widget-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #bdd7f6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background-color: rgba(25, 39, 82, 0.85);
+    border: 1px solid #8ab4f8;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(138, 180, 248, 0.3);
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #bdd7f6;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #a7c9ff;
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>
